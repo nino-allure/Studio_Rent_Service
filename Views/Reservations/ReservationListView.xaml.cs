@@ -16,9 +16,6 @@ using Studio_Rent_Service.ViewModels;
 
 namespace Studio_Rent_Service.Views.Reservations
 {
-    /// <summary>
-    /// Логика взаимодействия для ReservationListView.xaml
-    /// </summary>
     public partial class ReservationListView : Window
     {
         private ReservationViewModel viewModel;
@@ -29,7 +26,16 @@ namespace Studio_Rent_Service.Views.Reservations
         public ReservationListView()
         {
             InitializeComponent();
-            viewModel = (ReservationViewModel)this.DataContext;
+
+            // Инициализируем ViewModel
+            viewModel = new ReservationViewModel();
+            this.DataContext = viewModel;
+
+            Loaded += ReservationListView_Loaded;
+        }
+
+        private void ReservationListView_Loaded(object sender, RoutedEventArgs e)
+        {
             ApplyFilters();
         }
 
@@ -172,17 +178,21 @@ namespace Studio_Rent_Service.Views.Reservations
 
         private void ApplyFilters()
         {
-            IEnumerable<Reservation> filtered = viewModel.Reservations;
+            if (viewModel?.Reservations == null) return;
+
+            // Преобразуем ObservableCollection в List для безопасной работы с LINQ
+            var reservations = viewModel.Reservations.ToList();
+            IEnumerable<Reservation> filtered = reservations;
 
             // Фильтрация по текстовому поиску
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 var searchText = txtSearch.Text.ToLower();
                 filtered = filtered.Where(r =>
-                    r.Client.FullName.ToLower().Contains(searchText) ||
-                    r.Studio.Name.ToLower().Contains(searchText) ||
-                    r.Code.ToLower().Contains(searchText) ||
-                    r.Comment.ToLower().Contains(searchText));
+                    (r.Client?.FullName?.ToLower().Contains(searchText) ?? false) ||
+                    (r.Studio?.Name?.ToLower().Contains(searchText) ?? false) ||
+                    (r.Code?.ToLower().Contains(searchText) ?? false) ||
+                    (r.Comment?.ToLower().Contains(searchText) ?? false));
             }
 
             // Фильтрация по дате
@@ -199,7 +209,7 @@ namespace Studio_Rent_Service.Views.Reservations
             // Фильтрация по студии
             if (selectedStudio != null)
             {
-                filtered = filtered.Where(r => r.Studio.Id == selectedStudio.Id);
+                filtered = filtered.Where(r => r.Studio?.Id == selectedStudio.Id);
                 txtFilterInfo.Text += $" | Студия: {selectedStudio.Name}";
             }
 
@@ -220,7 +230,11 @@ namespace Studio_Rent_Service.Views.Reservations
                     break;
             }
 
-            dgReservations.ItemsSource = filtered.OrderBy(r => r.BookingDate).ThenBy(r => r.StartTime);
+            // Обновляем DataGrid
+            dgReservations.ItemsSource = filtered
+                .OrderBy(r => r.BookingDate)
+                .ThenBy(r => r.StartTime)
+                .ToList();
         }
 
         private void DgReservations_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -13,10 +13,6 @@
         MinWidth="800"
         WindowStartupLocation="CenterOwner">
 
-    <Window.DataContext>
-        <ViewModels:ReservationViewModel/>
-    </Window.DataContext>
-
     <Window.Resources>
         
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
