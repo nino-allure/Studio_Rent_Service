@@ -121,17 +121,17 @@
                                 Content="Добавить" 
                                 Background="#27ae60" 
                                 Foreground="White"
-                                Click="BtnAdd_Click"/>
+                                Click="BtnAdd_Click" Margin="0,0,10,0"/>
                             <Button x:Name="btnUpdate" 
                                 Content="Обновить" 
                                 Background="#2980b9" 
                                 Foreground="White"
-                                Click="BtnUpdate_Click"/>
+                                Click="BtnUpdate_Click" Margin="0,0,10,0"/>
                             <Button x:Name="btnDelete" 
                                 Content="Удалить" 
                                 Background="#c0392b" 
                                 Foreground="White"
-                                Click="BtnDelete_Click"/>
+                                Click="BtnDelete_Click" Margin="0,0,10,0"/>
                             <Button x:Name="btnClear" 
                                 Content="Очистить" 
                                 Background="#7f8c8d" 
