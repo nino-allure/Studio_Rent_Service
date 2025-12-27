@@ -12,11 +12,13 @@
         MinWidth="800"
         WindowStartupLocation="CenterOwner">
 
-<!--<Window.DataContext>
+    <Window.DataContext>
         <local:ReservationViewModel/>
-    </Window.DataContext>-->
+    </Window.DataContext> 
 
     <Window.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="10,5"/>
