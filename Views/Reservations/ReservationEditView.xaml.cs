@@ -21,8 +21,7 @@ namespace Studio_Rent_Service.Views.Reservations
     /// </summary>
     public partial class ReservationEditView : Window
     {
-        public partial class ReservationEditView : Window
-        {
+        
             private ReservationViewModel parentViewModel;
             private Reservation currentReservation;
 
@@ -233,4 +232,4 @@ namespace Studio_Rent_Service.Views.Reservations
             }
         }
     }
-}
+

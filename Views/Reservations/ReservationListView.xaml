@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Studio_Rent_Service.Views.Reservations"
+        xmlns:local="clr-namespace:Studio_Rent_Service.ViewModels"
+        xmlns:ViewModels="clr-namespace:Studio_Rent_Service.ViewModels"
         mc:Ignorable="d"
         Title="Управление бронированиями" 
         Height="700" 
@@ -13,11 +14,12 @@
         WindowStartupLocation="CenterOwner">
 
     <Window.DataContext>
-        <local:ReservationViewModel/>
-    </Window.DataContext> 
+        <ViewModels:ReservationViewModel/>
+    </Window.DataContext>
 
     <Window.Resources>
-        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5"/>
