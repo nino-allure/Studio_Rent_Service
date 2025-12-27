@@ -58,8 +58,8 @@
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\ReservationViewModel.cs" />
     <Compile Include="ViewModels\StudioViewModel.cs" />
-    <Compile Include="Views\Clients\ClientListEdit.xaml.cs">
-      <DependentUpon>ClientListEdit.xaml</DependentUpon>
+    <Compile Include="Views\Clients\ClientEditView.xaml.cs">
+      <DependentUpon>ClientEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Clients\ClientListView.xaml.cs">
       <DependentUpon>ClientListView.xaml</DependentUpon>
@@ -88,7 +88,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Clients\ClientListEdit.xaml">
+    <Page Include="Views\Clients\ClientEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
