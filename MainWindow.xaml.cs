@@ -12,14 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Studio_Rent_Service.ViewModels;
 
 namespace Studio_Rent_Service
 {
     public partial class MainWindow : Window
     {
+        private AuthViewModel authViewModel;
         public MainWindow()
         {
             InitializeComponent();
+            authViewModel = new AuthViewModel(); // Создаем новый AuthViewModel
+            ConfigureUIForRole();
+            Loaded += MainWindow_Loaded;
+        }
+        public MainWindow(AuthViewModel authViewModel)
+        {
+            InitializeComponent();
+            this.authViewModel = authViewModel;
+
+            // Настройка интерфейса в зависимости от роли
+            ConfigureUIForRole();
             Loaded += MainWindow_Loaded;
         }
 

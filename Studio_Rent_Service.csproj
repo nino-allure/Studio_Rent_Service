@@ -56,9 +56,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\AuthViewModel.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\ReservationViewModel.cs" />
     <Compile Include="ViewModels\StudioViewModel.cs" />
+    <Compile Include="Views\AuthWindow.xaml.xaml.cs">
+      <DependentUpon>AuthWindow.xaml.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clients\ClientEditView.xaml.cs">
       <DependentUpon>ClientEditView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +94,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AuthWindow.xaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Clients\ClientEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

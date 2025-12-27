@@ -39,10 +39,42 @@ namespace Studio_Rent_Service.ViewModels
                     Status = "Активно",
                     Cost = 5000,
                     Comment = "Запись песни"
+                },
+                new Reservation
+                {
+                    Id = 2,
+                    Code = "RS002",
+                    BookingDate = DateTime.Today.AddDays(2),
+                    StartTime = new TimeSpan(14, 0, 0),
+                    DurationHours = 3,
+                    Studio = Studios[1],
+                    Client = Clients[1],
+                    Status = "Активно",
+                    Cost = 5400,
+                    Comment = "Репетиция танцевального номера"
+                },
+                new Reservation
+                {
+                    Id = 3,
+                    Code = "RS003",
+                    BookingDate = DateTime.Today.AddDays(-1),
+                    StartTime = new TimeSpan(16, 0, 0),
+                    DurationHours = 1,
+                    Studio = Studios[2],
+                    Client = Clients[0],
+                    Status = "Завершено",
+                    Cost = 1200,
+                    Comment = "Мастер-класс"
                 }
             };
         }
 
+        public ObservableCollection<Reservation> GetClientReservations(int clientId)
+        {
+            var filtered = new ObservableCollection<Reservation>(
+                Reservations.Where(r => r.Client?.Id == clientId));
+            return filtered;
+        }
         public void AddReservation(Reservation reservation)
         {
             Reservations.Add(reservation);

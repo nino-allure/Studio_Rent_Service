@@ -8,10 +8,14 @@ using System.Windows;
 
 namespace Studio_Rent_Service
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            // Запускаем с окна авторизации
+            var authWindow = new Views.AuthWindow();
+            authWindow.Show();
+        }
     }
 }
+

@@ -19,19 +19,50 @@ namespace Studio_Rent_Service.Views.Reservations
     public partial class ReservationListView : Window
     {
         private ReservationViewModel viewModel;
+        private AuthViewModel authViewModel;
         private string currentStatusFilter = "all";
         private DateTime? filterDate = null;
         private Studio selectedStudio = null;
 
-        public ReservationListView()
+        public ReservationListView(AuthViewModel authViewModel) // Изменяем конструктор
         {
             InitializeComponent();
 
-            // Инициализируем ViewModel
+            this.authViewModel = authViewModel;
             viewModel = new ReservationViewModel();
+
+            // Если пользователь - клиент, показываем только его бронирования
+            if (authViewModel?.IsClient == true && authViewModel.CurrentUser?.ClientId.HasValue == true)
+            {
+                var clientReservations = viewModel.GetClientReservations(authViewModel.CurrentUser.ClientId.Value);
+                viewModel.Reservations = clientReservations;
+            }
+
             this.DataContext = viewModel;
 
+            // Настройка интерфейса в зависимости от роли
+            ConfigureUIForRole();
+
             Loaded += ReservationListView_Loaded;
+        }
+        private void ConfigureUIForRole()
+        {
+            if (authViewModel?.CurrentUser == null) return;
+
+            if (authViewModel.IsClient)
+            {
+                // Для клиентов скрываем некоторые элементы
+                btnAdd.Visibility = Visibility.Visible; // Клиенты могут добавлять
+                cbStudioFilter.Visibility = Visibility.Collapsed; // Не нужен фильтр по студиям
+                this.Title = "Мои бронирования";
+            }
+            else if (authViewModel.IsAdmin)
+            {
+                // Админы видят все
+                btnAdd.Visibility = Visibility.Visible;
+                cbStudioFilter.Visibility = Visibility.Visible;
+                this.Title = "Управление бронированиями";
+            }
         }
 
         private void ReservationListView_Loaded(object sender, RoutedEventArgs e)
