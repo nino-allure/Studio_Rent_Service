@@ -64,8 +64,8 @@
     <Compile Include="Views\Clients\ClientListView.xaml.cs">
       <DependentUpon>ClientListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reservations\ReservationListEdit.xaml.cs">
-      <DependentUpon>ReservationListEdit.xaml</DependentUpon>
+    <Compile Include="Views\Reservations\ReservationEditView.xaml.cs">
+      <DependentUpon>ReservationEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Reservations\ReservationListView.xaml.cs">
       <DependentUpon>ReservationListView.xaml</DependentUpon>
@@ -96,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Reservations\ReservationListEdit.xaml">
+    <Page Include="Views\Reservations\ReservationEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

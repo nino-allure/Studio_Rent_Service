@@ -12,9 +12,9 @@
         MinWidth="700"
         WindowStartupLocation="CenterOwner">
 
-    <!-- <Window.DataContext>
-    <ViewModels:StudioViewModel/>
-</Window.DataContext> -->
+<!--<Window.DataContext>
+        <ViewModels:StudioViewModel/>
+    </Window.DataContext> -->
     
 
     <Window.Resources>
