@@ -55,6 +55,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\ClientViewModel.cs" />
+    <Compile Include="ViewModels\ReservationViewModel.cs" />
+    <Compile Include="ViewModels\StudioViewModel.cs" />
+    <Compile Include="Views\Clients\ClientListEdit.xaml.cs">
+      <DependentUpon>ClientListEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clients\ClientListView.xaml.cs">
+      <DependentUpon>ClientListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reservations\ReservationListEdit.xaml.cs">
+      <DependentUpon>ReservationListEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reservations\ReservationListView.xaml.cs">
+      <DependentUpon>ReservationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Studios\StudioListEdit.xaml.cs">
+      <DependentUpon>StudioListEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Studios\StudioListView.xaml.cs">
+      <DependentUpon>StudioListView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,29 +88,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Client_Info.xaml">
+    <Page Include="Views\Clients\ClientListEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Reservation_Control.xaml">
+    <Page Include="Views\Clients\ClientListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Studio_Control.xaml">
+    <Page Include="Views\Reservations\ReservationListEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reservations\ReservationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Studios\StudioListEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Studios\StudioListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Client_Info.xaml.cs">
-      <DependentUpon>Client_Info.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Reservation_Control.xaml.cs">
-      <DependentUpon>Reservation_Control.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Studio_Control.xaml.cs">
-      <DependentUpon>Studio_Control.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Studio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,5 +142,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

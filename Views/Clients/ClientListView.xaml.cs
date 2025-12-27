@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Studio_Rent_Service.Pages
+namespace Studio_Rent_Service.Views.Clients
 {
     /// <summary>
-    /// Логика взаимодействия для Client_Info.xaml
+    /// Логика взаимодействия для ClientListView.xaml
     /// </summary>
-    public partial class Client_Info : Window
+    public partial class ClientListView : Window
     {
-        public Client_Info()
+        public ClientListView()
         {
             InitializeComponent();
         }

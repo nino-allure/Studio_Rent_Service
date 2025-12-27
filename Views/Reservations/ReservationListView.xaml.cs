@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Studio_Rent_Service.Pages
+namespace Studio_Rent_Service.Views.Reservations
 {
     /// <summary>
-    /// Логика взаимодействия для Studio_Control.xaml
+    /// Логика взаимодействия для ReservationListView.xaml
     /// </summary>
-    public partial class Studio_Control : Window
+    public partial class ReservationListView : Window
     {
-        public Studio_Control()
+        public ReservationListView()
         {
             InitializeComponent();
         }
