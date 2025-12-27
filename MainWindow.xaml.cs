@@ -70,8 +70,8 @@ namespace Studio_Rent_Service
         private void BtnAbout_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Studio Rent Service v1.0\n\n" +
-                          "Система управления студиями проката оборудования\n" +
-                          "© 2024 Все права защищены",
+                          "Система управления Аренды Студий Звукозаписи\n" +
+                          "© 2025 Все права защищены",
                           "О программе",
                           MessageBoxButton.OK, MessageBoxImage.Information);
         }

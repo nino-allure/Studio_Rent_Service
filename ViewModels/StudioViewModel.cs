@@ -29,7 +29,7 @@ namespace Studio_Rent_Service.ViewModels
                 {
                     Id = 2,
                     Code = "ST002",
-                    Name = "Танцевальная студия 'Ритм'",
+                    Name = "Ultima Sounds",
                     Address = "пр. Ленина, д. 45",
                     Equipment = "Зеркала, Балетные станки, Звуковая система",
                     RentalCost = 1800
@@ -38,7 +38,7 @@ namespace Studio_Rent_Service.ViewModels
                 {
                     Id = 3,
                     Code = "ST003",
-                    Name = "Художественная студия 'Колорит'",
+                    Name = "Luxury Waves",
                     Address = "ул. Советская, д. 23",
                     Equipment = "Мольберты, Освещение, Материалы для рисования",
                     RentalCost = 1200
