@@ -70,8 +70,8 @@
     <Compile Include="Views\Reservations\ReservationListView.xaml.cs">
       <DependentUpon>ReservationListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Studios\StudioListEdit.xaml.cs">
-      <DependentUpon>StudioListEdit.xaml</DependentUpon>
+    <Compile Include="Views\Studios\StudioEditView.xaml.cs">
+      <DependentUpon>StudioEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Studios\StudioListView.xaml.cs">
       <DependentUpon>StudioListView.xaml</DependentUpon>
@@ -104,7 +104,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Studios\StudioListEdit.xaml">
+    <Page Include="Views\Studios\StudioEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
